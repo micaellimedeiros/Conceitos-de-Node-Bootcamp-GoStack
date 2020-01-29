@@ -8,6 +8,26 @@ server.use(express.json());
 // Criando array de projetos
 const projects = [];
 
+//Middleware de verificação 
+
+function ProjectExists (req, res, next){
+    const { id } = req.params;
+    const project = projects.find(proj => proj.id == id);
+
+    if(!project){
+    return res.status(400).json({ERROR: 'Projeto não encontrado'});
+    }
+    return next();
+    }
+
+// Middleware de log
+function logRequests(req, res, next) {
+    console.count("Número de requisições");
+    return next();
+}
+server.use(logRequests);
+
+
 // Modo POST = Criar projeto
 server.post('/projects', (req, res) => {
     const { id, title } = req.body;
@@ -25,7 +45,7 @@ server.get('/projects', (req, res) => {
 });
 
 // Modo PUT = Alterar projeto através do ID
-server.put('/projects/:id', (req, res) => {
+server.put('/projects/:id', ProjectExists, (req, res) => {
     const { id } = req.params;
     const { title } = req.body;
 
@@ -37,7 +57,7 @@ server.put('/projects/:id', (req, res) => {
 });
 
 // Modo DELETE = Excluir projeto
-server.delete('/projects/:id', (req, res) => {
+server.delete('/projects/:id', ProjectExists, (req, res) => {
     const { id } = req.params;
     const projIndex = projects.findIndex(proj => proj.id == id)
     projects.splice(projIndex, 1);
@@ -46,13 +66,13 @@ server.delete('/projects/:id', (req, res) => {
 });
 
 // Modo POST da Tasks
-server.post('/projects/:id/tasks', (req, res) => {
+server.post('/projects/:id/tasks', ProjectExists,  (req, res) => {
     const { id } = req.params;
     const { title } = req.body;
 
     const project = projects.find(proj => proj.id == id);
-
-    project.tasks.push(title);
+    const index = projects.indexOf(project);
+    projects[index].tasks.push(title);
     return res.json(project);
 
 });

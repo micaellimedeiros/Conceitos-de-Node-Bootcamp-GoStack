@@ -47,6 +47,9 @@ Middlewares
     (console.log) uma contagem de quantas requisições foram feitas na 
     aplicação até então;
     
-    # RESULTADO:
-<img src="https://github.com/MicaelliMedeiros/Desafio-01---Bootcamp-GoStack/blob/master/criar-projeto.jpg" width="70%" height="750%">
+ # RESULTADO:
+<img src="https://github.com/MicaelliMedeiros/Desafio-01---Bootcamp-GoStack/blob/master/criar-projeto.jpg" width="70%" height="70%">
+<img src="https://github.com/MicaelliMedeiros/Desafio-01---Bootcamp-GoStack/blob/master/criar-tasks.jpg" width="70%" height="70%">
+<img src="https://github.com/MicaelliMedeiros/Desafio-01---Bootcamp-GoStack/blob/master/listar-projetos.jpg" width="70%" height="70%">
+
 

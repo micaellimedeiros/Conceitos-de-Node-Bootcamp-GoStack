@@ -48,5 +48,5 @@ Middlewares
     aplicação até então;
     
     # RESULTADO:
-<img src="https://github.com/MicaelliMedeiros/Desafio-01---Bootcamp-GoStack/blob/master/criar-projeto.jpg" width="50%" height="50%">
+<img src="https://github.com/MicaelliMedeiros/Desafio-01---Bootcamp-GoStack/blob/master/criar-projeto.jpg" width="70%" height="750%">
 

@@ -46,3 +46,7 @@ Middlewares
     Crie um middleware global chamado em todas requisições que imprime 
     (console.log) uma contagem de quantas requisições foram feitas na 
     aplicação até então;
+    
+    # RESULTADO:
+<img src="https://github.com/MicaelliMedeiros/Desafio-01---Bootcamp-GoStack/blob/master/criar-projeto.jpg" width="20%" height="20%">
+
